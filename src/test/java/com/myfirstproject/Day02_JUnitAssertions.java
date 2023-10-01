@@ -43,6 +43,7 @@ public class Day02_JUnitAssertions {
         Assertions.assertNull(str);
         Assertions.assertNotNull("NOT NULL VALUE");
 
+        //third
 
 
     }
