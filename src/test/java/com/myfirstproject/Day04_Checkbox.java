@@ -1,4 +1,5 @@
 package com.myfirstproject;
+import com.myfirstproject.utilities.TestBase;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,14 +9,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
-public class Day04_Checkbox {
-    WebDriver driver;
-    @BeforeEach//runs before each test method
-    public void setUp(){
-        driver = new ChromeDriver();//creating driver
-        driver.manage().window().maximize();//maximizing window
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));//implicit wait
-    }
+public class Day04_Checkbox extends TestBase {
+
+    /*
+    Remove @Before and @After from this class. And extend TesBase
+    Now this class shorter and clearer
+     */
+
     @Test
     public void checkboxTest(){
 //        Go to https://testcenter.techproeducation.com/index.php?page=checkboxes
@@ -35,8 +35,5 @@ public class Day04_Checkbox {
         Assertions.assertTrue(checkbox1.isSelected());//if checkbox1 is checked PASS
         Assertions.assertTrue(checkbox2.isSelected());//if checkbox2 is selected PASS
     }
-    @AfterEach
-    public void tearDown(){
-//        driver.quit();
-    }
+
 }
