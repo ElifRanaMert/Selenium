@@ -57,5 +57,15 @@ public class Day04_DropDown extends TestBase {
             Assert if Texas is selected or not
             Then check is the state names are in  alphabetical order(THIS WILL FAIL B/C STATE LIST IS NOT IN ALPHABETICAL ORDER)
          */
+        driver.get("https://testcenter.techproeducation.com/index.php?page=dropdown");
+
+        WebElement states = driver.findElement(By.id("state"));
+        Select selectState = new Select(states);
+        selectState.selectByValue("Texas");
+
+        WebElement selectedState = selectState.getFirstSelectedOption();
+        System.out.println(selectedState.getText());
+
+        Assertions.assertTrue(selectedState.getText().equals("Texas"));
     }
 }
